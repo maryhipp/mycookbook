@@ -1,0 +1,15 @@
+<% if signed_in? %>
+
+  <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
+    Signed in as <%= link_to current_user.name, current_user %>
+    <%= f.submit "Sign out", id: 'signout' %>
+  <% end %>
+
+  <%= link_to "My Cookbook" %>
+
+<% else %>
+  Sign up or log in to save recipes to your cookbook!
+
+  <%= link_to "Sign In", signin_path %> | <%= link_to "Sign up", signup_path %>
+
+<% end %>

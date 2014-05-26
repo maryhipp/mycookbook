@@ -1,0 +1,8 @@
+<h1>Search Results</h1>
+
+<% @search_results.each do |recipe| %>
+  <li>
+    <% recipe_id = recipe["RecipeID"] %>
+    <p><a href="/search_results/<%= recipe_id %>">
+    <img src="<%= recipe["ImageURL"] %>" style="max-width:250px;"><%= recipe["Title"] %></li>
+<% end %>

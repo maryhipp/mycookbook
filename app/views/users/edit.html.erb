@@ -1,0 +1,12 @@
+<h1>Edit <%= @user.name %></h1>
+<%= render "user_form" %>
+
+<hr>
+
+<%= form_for @user, method: 'delete' do |f| %>
+  <%= f.submit "Delete" %>
+<% end %>
+
+<hr>
+
+<%= link_to "Cancel", @user %>

@@ -1,0 +1,11 @@
+<h1>Basic Recipe Search</h1>
+
+<p>Welcome to MyCookbook!</p>
+
+<%= form_tag("/search_results", method: "get") do %>
+  <%= label_tag(:q, "What are you craving?") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Basic Recipe Search") %>
+<% end %>
+
+<%= link_to "Advanced Search", advanced_search_path %>

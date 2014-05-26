@@ -1,0 +1,24 @@
+<p>Recipe</p>
+
+<img src="<%= @recipe_imageURL %>" style="max-width:500px;">
+<h1><%= @recipe_title %></h1>
+<p><%= @recipe_description %></p>
+<p>Cuisine: <%= @recipe_cuisine %></p>
+<p>Category: <%= @recipe_category %></p>
+<p>Servings: <%= @recipe_yield %></p>
+<p>Total Time: <%= @recipe_time %> minutes</p>
+<p>Rating: <%= @recipe_rating %></p>
+
+<p>Ingredients:</p>
+<ul>
+  <% @recipe_ingredient_array.each do |ingredient| %>
+    <li> <%= ingredient %></li>
+    <% end %>
+</ul>
+
+<p>Instructions:</p>
+<%= @recipe_instructions%>
+
+<% if signed_in? %>
+  <%= link_to "Save to MyCookbook", new_user_recipe_path(current_user) %>
+<% end %>

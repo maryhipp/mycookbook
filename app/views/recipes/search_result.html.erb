@@ -6,7 +6,6 @@
 <div class="recipedetails">
   <p><%= @recipe_description %></p>
   <p>Cuisine: <%= @recipe_cuisine %></p>
-  <p>Category: <%= @recipe_category %></p>
   <p>Servings: <%= @recipe_yield %></p>
   <p>Total Time: <%= @recipe_time %> minutes</p>
   <p>Rating: <%= @recipe_rating %></p>
@@ -29,7 +28,7 @@
 <% if signed_in? %>
   <%= form_tag [@user,@recipe], method: 'post' do %>
     <%= hidden_field_tag :recipe_id, @recipe_id %>
-    <%= hidden_field_tag :new_route, :search %>
+
     <%= submit_tag "Save Recipe to MyCookbook", id: "create" %>
   <% end %>
 

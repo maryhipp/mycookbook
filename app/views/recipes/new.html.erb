@@ -1,32 +1,29 @@
 <h1>Create Your Own Recipe</h1>
 
 <%= form_for [@user, @recipe], method: 'post' do |f|%>
-  <%= f.label :title %>
+  <%= f.label :title, "What would you like to call your recipe?" %>
   <%= f.text_field :title %>
-
-  <%= f.label :imageURL %>
+<br>
+  <%= f.label :imageURL, "Paste URL for image here" %>
   <%= f.text_field :imageURL %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
+<br>
+  <%= f.label :description, "Put a short description here, if you'd like." %>
+  <%= f.text_area :description %>
+<br>
   <%= f.label :cuisine %>
   <%= f.text_field :cuisine %>
-
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-
-  <%= f.label :ingredients %>
-  <%= f.text_field :ingredients %>
-
-  <%= f.label :instructions %>
-  <%= f.text_field :instructions %>
-
-  <%= f.label :yield %>
+<br>
+  <%= f.label :ingredients, "List the ingredients here, separated by commas. Don't forget to include amounts and units!" %>
+  <%= f.text_area :ingredients %>
+<br>
+  <%= f.label :instructions, "Here is where you can clearly list out the instructions for this recipe, separated into sentences" %>
+  <%= f.text_area :instructions %>
+<br>
+  <%= f.label :yield, "How many servings does this make?" %>
   <%= f.text_field :yield %>
-
-  <%= f.label :time %>
+<br>
+  <%= f.label :time, "How much total time would you say this recipe takes to make?" %>
   <%= f.text_field :time %>
-
+<br>
   <%= f.submit "Save Recipe to MyCookbook" %>
 <% end %>

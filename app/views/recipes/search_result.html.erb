@@ -20,5 +20,8 @@
 <%= @recipe_instructions%>
 
 <% if signed_in? %>
-  <%= link_to "Save to MyCookbook", new_user_recipe_path(current_user) %>
+  <%= form_tag [@user,@recipe], method: 'post' do %>
+    <%= submit_tag "Save Recipe to MyCookbook", id: "create" %>
+  <% end %>
+
 <% end %>

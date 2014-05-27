@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action(:get_json, only: [:search_result, :create])
 
   def search_results
     search_terms = params[:q].gsub(" ", "+")
@@ -7,41 +8,51 @@ class RecipesController < ApplicationController
   end
 
   def search_result
-    @recipe_id = params[:recipe_id]
-    @response = HTTParty.get("http://api.bigoven.com/recipe/#{@recipe_id}?api_key=dvx9275CydFfh2KPQzu33gsk1GEn7oyH")
-    @recipe_imageURL = @response["Recipe"]["ImageURL"]
-    @recipe_title = @response["Recipe"]["Title"]
-    @recipe_description = @response["Recipe"]["Description"]
-    @recipe_cuisine = @response["Recipe"]["Cuisine"]
-    @recipe_category = @response["Recipe"]["Category"]
-    @recipe_yield = @response["Recipe"]["YieldNumber"] + " " + @response["Recipe"]["YieldUnit"]
-    @recipe_time = @response["Recipe"]["TotalMinutes"]
-    @recipe_rating = @response["Recipe"]["StarRating"].to_f.round(2)
-    @recipe_ingredient_array = @response["Recipe"]["Ingredients"]["Ingredient"].map do |ingredient_hash|
-        ingredient_hash["Quantity"] + " " + ingredient_hash["Unit"] + " " + ingredient_hash["Name"]
-    end
-    @recipe_instructions = @response["Recipe"]["Instructions"]
-
+    @recipe = Recipe.new
+    @user = current_user
   end
 
   def create
-    @recipe = Recipe.new(
-      title: @recipe_title,
-      description: @recipe_description,
-      cuisine: @recipe_cuisine,
-      category: @recipe_category,
-      ingredients: @recipe_ingredient_array,
-      instructions: @recipe_instructions,
-      yield: @recipe_yield,
-      time: @recipe_time,
-      user_id: params[:user_id]
-      )
+    @recipe = Recipe.new
+    @recipe[:title] = @recipe_title
+    @recipe[:description] = @recipe_description
+    @recipe[:cuisine] = @recipe_cuisine
+    @recipe[:category] = @recipe_category
+    @recipe[:ingredients] = @recipe_ingredient_array
+    @recipe[:instructions] = @recipe_instructions
+    @recipe[:yield] = @recipe_yield
+    @recipe[:time] = @recipe_time
+    @recipe[:user_id] = params[:user_id]
+    @recipe.save
+    redirect_to user_recipes_path(current_user)
+  end
+
+  def index
+    @user = current_user
+    @recipes = Recipe.where(user_id: @user.id)
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
   end
 
   private
 
-  def recipe_params
-    params.require(:recipe).permite()
+  def get_json
+    recipe_id = params[:recipe_id]
+    response = HTTParty.get("http://api.bigoven.com/recipe/#{recipe_id}?api_key=dvx9275CydFfh2KPQzu33gsk1GEn7oyH")
+    @recipe_imageURL = response["Recipe"]["ImageURL"]
+    @recipe_title = response["Recipe"]["Title"]
+    @recipe_description = response["Recipe"]["Description"]
+    @recipe_cuisine = response["Recipe"]["Cuisine"]
+    @recipe_category = response["Recipe"]["Category"]
+    @recipe_yield = response["Recipe"]["YieldNumber"].to_s + " " + response["Recipe"]["YieldUnit"].to_s
+    @recipe_time = response["Recipe"]["TotalMinutes"]
+    @recipe_rating = response["Recipe"]["StarRating"].to_f.round(2)
+    @recipe_ingredient_array = response["Recipe"]["Ingredients"]["Ingredient"].map do |ingredient_hash|
+        ingredient_hash["Quantity"].to_s + " " + ingredient_hash["Unit"].to_s + " " + ingredient_hash["Name"].to_s
+    end
+    @recipe_instructions = response["Recipe"]["Instructions"]
   end
 
 end

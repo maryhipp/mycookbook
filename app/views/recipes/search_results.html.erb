@@ -3,6 +3,6 @@
 <% @search_results.each do |recipe| %>
   <li>
     <% recipe_id = recipe["RecipeID"] %>
-    <p><a href="/search_results/<%= recipe_id %>">
+    <p><a href="/search_results/<%= recipe_id %>" id="recipe-link">
     <img src="<%= recipe["ImageURL"] %>" style="max-width:250px;"><%= recipe["Title"] %></li>
 <% end %>

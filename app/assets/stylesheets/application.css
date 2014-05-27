@@ -13,3 +13,82 @@
  *= require_tree .
  *= require_self
  */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+body {
+  background-color:#9bc2cf;
+}
+div.container {
+  background-color:white;
+  border: 4px solid black;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  width: 900px;
+}
+
+div.navigation {
+  text-align: right;
+}
+
+.welcome {
+  text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
+  color: lightblue;
+  font-family: Courier, monospace;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.craving {
+  font-size:30px;
+  font-family: cursive;
+  margin: 40px;
+}
+
+.search_button {
+  font-size: 50px;
+  margin:40px;
+
+}
+
+.search_field {
+  font-size: 30px;
+  margin: 40px;
+  text-align:center;
+}
+
+.search_results h1 {
+  color:darkblue;
+  font-size:40px;
+}
+.search_results li {
+  font-size: 40px;
+  list-style: none;
+  padding:30px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.search_results .list_image {
+  max-width: 200px;
+  max-height: 200px;
+  float:left;
+  margin:10px;
+  border: 2px solid black;
+}
+
+.list_title {
+  margin:10px;
+
+
+ }

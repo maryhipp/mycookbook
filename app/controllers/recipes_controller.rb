@@ -49,9 +49,8 @@ class RecipesController < ApplicationController
     @recipe_yield = response["Recipe"]["YieldNumber"].to_s + " " + response["Recipe"]["YieldUnit"].to_s
     @recipe_time = response["Recipe"]["TotalMinutes"]
     @recipe_rating = response["Recipe"]["StarRating"].to_f.round(2)
-    @recipe_ingredient_array = response["Recipe"]["Ingredients"]["Ingredient"].map do |ingredient_hash|
-        ingredient_hash["Quantity"].to_s + " " + ingredient_hash["Unit"].to_s + " " + ingredient_hash["Name"].to_s
-    end
+    #WHY WILL THIS WORK IN PRY AND NOT IN MY APP :(
+    @recipe_ingredient_array = response["Recipe"]["Ingredients"]["Ingredient"].map { |ingredient_hash| "#{ingredient_hash["Quantity"] } #{ingredient_hash["Unit"]} #{ingredient_hash["Name"]}" }
     @recipe_instructions = response["Recipe"]["Instructions"]
   end
 

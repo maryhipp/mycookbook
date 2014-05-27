@@ -1,11 +1,12 @@
-<h1>Basic Recipe Search</h1>
+<h1 class="visuallyhidden">Basic Recipe Search</h1>
 
-<p>Welcome to MyCookbook!</p>
+<p class="welcome">Welcome to MyCookbook!</p>
 
 <%= form_tag("/search_results", method: "get") do %>
-  <%= label_tag(:q, "What are you craving?") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Basic Recipe Search") %>
+  <%= label_tag(:q, "What are you craving?", :class => "craving") %>
+  <br>
+  <%= text_field_tag(:q, nil, :class => "search_field") %>
+  <br>
+  <%= submit_tag("Basic Recipe Search", :class => "search_button") %>
 <% end %>
 
-<%= link_to "Advanced Search", advanced_search_path %>

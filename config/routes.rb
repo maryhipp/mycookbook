@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  get '/advanced_search' => 'welcome#advanced_search'
 
   get '/search_results' => 'recipes#search_results'
   get '/search_results/:recipe_id' => 'recipes#search_result'

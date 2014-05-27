@@ -1,26 +1,35 @@
-<p>Recipe</p>
+<p class="visuallyhidden">Recipe</p>
 
-<img src="<%= @recipe_imageURL %>" style="max-width:500px;">
+
 <h1><%= @recipe_title %></h1>
-<p><%= @recipe_description %></p>
-<p>Cuisine: <%= @recipe_cuisine %></p>
-<p>Category: <%= @recipe_category %></p>
-<p>Servings: <%= @recipe_yield %></p>
-<p>Total Time: <%= @recipe_time %> minutes</p>
-<p>Rating: <%= @recipe_rating %></p>
+<img src="<%= @recipe_imageURL %>" class="large-image">
+<div class="recipedetails">
+  <p><%= @recipe_description %></p>
+  <p>Cuisine: <%= @recipe_cuisine %></p>
+  <p>Category: <%= @recipe_category %></p>
+  <p>Servings: <%= @recipe_yield %></p>
+  <p>Total Time: <%= @recipe_time %> minutes</p>
+  <p>Rating: <%= @recipe_rating %></p>
 
-<p>Ingredients:</p>
-<ul>
-  <% @recipe_ingredient_array.each do |ingredient| %>
-    <li> <%= ingredient %></li>
-    <% end %>
-</ul>
+  <p>Ingredients:</p>
+  <ul>
+    <% @recipe_ingredient_array.each do |ingredient| %>
+      <li> <%= ingredient %></li>
+      <% end %>
+  </ul>
 
-<p>Instructions:</p>
-<%= @recipe_instructions%>
+  <p>Instructions:</p>
+  <ol>
+  <% @recipe_instructions.each do |instruction_line| %>
+    <li><%= instruction_line %></li>
+  <% end %>
+  </ol>
+</div>
 
 <% if signed_in? %>
   <%= form_tag [@user,@recipe], method: 'post' do %>
+    <%= hidden_field_tag :recipe_id, @recipe_id %>
+    <%= hidden_field_tag :new_route, :search %>
     <%= submit_tag "Save Recipe to MyCookbook", id: "create" %>
   <% end %>
 

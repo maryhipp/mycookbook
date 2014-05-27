@@ -1,0 +1,32 @@
+<h1>Create Your Own Recipe</h1>
+
+<%= form_for [@user, @recipe], method: 'post' do |f|%>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :imageURL %>
+  <%= f.text_field :imageURL %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+  <%= f.label :ingredients %>
+  <%= f.text_field :ingredients %>
+
+  <%= f.label :instructions %>
+  <%= f.text_field :instructions %>
+
+  <%= f.label :yield %>
+  <%= f.text_field :yield %>
+
+  <%= f.label :time %>
+  <%= f.text_field :time %>
+
+  <%= f.submit "Save Recipe to MyCookbook" %>
+<% end %>

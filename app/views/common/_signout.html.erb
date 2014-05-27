@@ -6,7 +6,7 @@
     <%= f.submit "Sign out", id: 'signout' %>
   <% end %>
 
-  <%= link_to "My Cookbook" %>
+  <%= link_to "My Cookbook", user_recipes_path(current_user) %>
 
 <% else %>
   Sign up or log in to save recipes to your cookbook!

@@ -1,5 +1,5 @@
-<h1><%= @user.name %>'s Homepage</h1>
+<h1><%= @user.name %>'s Cookbook</h1>
 
 <% @recipes.each do |recipe| %>
-  <%= link_to recipe.title, user_recipe_path(@user,recipe) %>
+  <li><%= link_to recipe.title, user_recipe_path(@user,recipe) %></li>
 <% end %>

@@ -10,3 +10,7 @@
   <%= submit_tag("Basic Recipe Search", :class => "search_button") %>
 <% end %>
 
+<% if signed_in? %>
+  <%= link_to "Nah, I want to add my own", new_user_recipe_path(current_user) %>
+<% end %>
+

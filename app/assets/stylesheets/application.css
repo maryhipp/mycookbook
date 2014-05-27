@@ -63,6 +63,7 @@ div.navigation {
 
 .search_field {
   font-size: 30px;
+  width: 500px;
   margin: 40px;
   text-align:center;
 }
@@ -80,15 +81,25 @@ div.navigation {
 }
 
 .search_results .list_image {
-  max-width: 200px;
-  max-height: 200px;
+  border: 2px solid black;
   float:left;
   margin:10px;
-  border: 2px solid black;
+  max-width: 25%;
+  max-height: 200px;
 }
 
 .list_title {
   margin:10px;
-
+  max-width: 70%;
 
  }
+
+.large-image {
+  max-width:800px;
+  border: 3px solid black;
+
+}
+
+.recipedetails {
+  text-align: left;
+}

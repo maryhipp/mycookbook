@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/search_results/:recipe_id' => 'recipes#search_result'
 
   resources :users, except: [:index] do
-    resources :recipes, except: [:new]
+    resources :recipes
   end
   resources :sessions, only: [:create]
 

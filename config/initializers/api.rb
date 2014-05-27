@@ -1,0 +1,1 @@
+MY_API_KEY = ENV["MY_API_KEY"]

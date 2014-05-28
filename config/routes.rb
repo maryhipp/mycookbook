@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index] do
     resources :recipes
+    resources :grocery_lists, except: [:index]
   end
+
   resources :sessions, only: [:create]
 
   get '/signup' => 'users#new'

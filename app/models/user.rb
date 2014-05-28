@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :recipes
-
+  has_many :grocery_lists
   before_create :create_remember_token
   before_save :normalize_fields
 

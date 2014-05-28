@@ -1,5 +1,4 @@
 class RecipesController < ApplicationController
-  before_action(:get_json, only: [:search_result])
   before_action(:find_user, except: [:search_results])
   before_action(:new_recipe, only: [:search_result, :new, :create])
   before_action(:find_recipe, only: [:show, :edit, :update, :destroy])
@@ -11,15 +10,13 @@ class RecipesController < ApplicationController
   end
 
   def search_result
-    @recipe = Recipe.new
+    get_json
   end
 
   def new
-    @recipe = Recipe.new
   end
 
   def create
-    @recipe = Recipe.new
     #if creating a recipe via saving from search
     if params[:recipe_id] != nil
       get_json
@@ -54,18 +51,26 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
   end
 
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   def update
+    @recipe[:title] = params[:recipe][:title]
+    @recipe[:imageURL] = params[:recipe][:imageURL]
+    @recipe[:description] = params[:recipe][:description]
+    @recipe[:cuisine] = params[:recipe][:cuisine]
+    @recipe[:ingredients] = params[:recipe][:ingredients].split(",")
+    @recipe[:instructions] = params[:recipe][:instructions].split(". ")
+    @recipe[:yield] = params[:recipe][:yield]
+    @recipe[:time] = params[:recipe][:time]
+    @recipe[:user_id] = params[:user_id]
+    @recipe.save
+    redirect_to user_recipes_path(@user)
   end
 
   def destroy
-    @recipe = Recipe.find(params[:id])
     @recipe.destroy
     redirect_to user_recipes_path
   end

@@ -2,7 +2,7 @@
 <% if signed_in? %>
 
   <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
-    Signed in as <%= link_to current_user.name, current_user %>
+    Welcome, <%= link_to current_user.name, current_user %>!
     <%= f.submit "Sign out", id: 'signout' %>
   <% end %>
 

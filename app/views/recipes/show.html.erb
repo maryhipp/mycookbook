@@ -22,6 +22,10 @@
   </ol>
 </div>
 
+
+
+<%= link_to "Edit Recipe", edit_user_recipe_path(@user,@recipe) %>
+
 <%= form_for [@user,@recipe], method: 'delete' do |f| %>
   <%= f.submit "Delete Recipe from MyCookbook", id: "destroy" %>
 <% end %>

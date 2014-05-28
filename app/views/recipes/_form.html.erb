@@ -1,0 +1,27 @@
+<%= form_for [@user, @recipe] do |f|%>
+  <%= f.label :title, "What would you like to call your recipe?" %>
+  <%= f.text_field :title %>
+<br>
+  <%= f.label :imageURL, "Paste URL for image here" %>
+  <%= f.text_field :imageURL %>
+<br>
+  <%= f.label :description, "Put a short description here, if you'd like." %>
+  <%= f.text_area :description %>
+<br>
+  <%= f.label :cuisine %>
+  <%= f.text_field :cuisine %>
+<br>
+  <%= f.label :ingredients, "List the ingredients here, separated by commas. Don't forget to include amounts and units!" %>
+  <%= f.text_area :ingredients %>
+<br>
+  <%= f.label :instructions, "Here is where you can clearly list out the instructions for this recipe, separated into sentences" %>
+  <%= f.text_area :instructions %>
+<br>
+  <%= f.label :yield, "How many servings does this make?" %>
+  <%= f.text_field :yield %>
+<br>
+  <%= f.label :time, "How much total time would you say this recipe takes to make?" %>
+  <%= f.text_field :time %>
+<br>
+  <%= f.submit "Save Recipe to MyCookbook" %>
+<% end %>

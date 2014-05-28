@@ -23,13 +23,8 @@ describe 'User can add saved recipes to grocery list' do
 
   it 'adds ingredients from that recipe to grocery list' do
     click_on("Add to My Grocery List")
-    click_on("My Grocery List")
-    expect(page).to have_content("Raw Banana Ice Cream")
+    expect(page).to have_content("raw honey")
   end
-
-
-
-
 
   def login(user)
     visit signin_path

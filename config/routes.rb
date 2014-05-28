@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index] do
     resources :recipes
     get '/grocery_list' => 'grocery_lists#show'
+    patch '/grocery_list' => 'grocery_lists#update'
   end
 
   resources :sessions, only: [:create]

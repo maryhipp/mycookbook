@@ -1,5 +1,14 @@
 <h1><%= @user.name %>'s Grocery List</h1>
 
-<%= @recipes.each do |recipe| %>
-  <%= recipe.ingredients %>
+<div class="grocerylist">
+<ul>
+<% @grocery_list_array.each do |ingredient| %>
+    <li><%= ingredient %></li>
+<% end %>
+</ul>
+</div>
+
+
+<%= form_tag user_grocery_list_path(@user), method: 'patch' do %>
+  <%= submit_tag "Clear My Grocery List" %>
 <% end %>

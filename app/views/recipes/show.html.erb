@@ -2,27 +2,29 @@
 
 <img src="<%= @recipe.imageURL %>" class="large-image">
 <div class="recipedetails">
-<p><%= @recipe.description %></p>
-<p>Cuisine: <%= @recipe.cuisine %></p>
-<p>Servings: <%= @recipe.yield %></p>
-<p>Total Time: <%= @recipe.time %> minutes</p>
+  <p><%= @recipe.description %></p>
+  <p>Cuisine: <%= @recipe.cuisine %></p>
+  <p>Servings: <%= @recipe.yield %></p>
+  <p>Total Time: <%= @recipe.time %> minutes</p>
 
-<p>Ingredients:</p>
-<ul>
-  <% @recipe.ingredients.each do |ingredient| %>
-    <li> <%= ingredient %></li>
+  <p>Ingredients:</p>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+      <li> <%= ingredient %></li>
     <% end %>
-</ul>
+  </ul>
 
-<p>Instructions:</p>
-  <ol>
-  <% @recipe.instructions.each do |instruction_line| %>
-    <li><%= instruction_line %></li>
-  <% end %>
-  </ol>
+  <p>Instructions:</p>
+    <ol>
+    <% @recipe.instructions.each do |instruction_line| %>
+      <li><%= instruction_line %></li>
+    <% end %>
+    </ol>
 </div>
 
-<%= form_for [@user,@recipe] do |f| %>
+<%= form_for [@user,@recipe], url: user_grocery_list_path(@user) do |f| %>
+  <%= f.hidden_field 'add to grocery list', :value =>'yes' %>
+  <%= f.hidden_field :recipe_id, :value => @recipe.id %>
   <%= f.submit "Add to My Grocery List" %>
 <% end %>
 

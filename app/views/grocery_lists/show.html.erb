@@ -1,0 +1,5 @@
+<h1><%= @user.name %>'s Grocery List</h1>
+
+<%= @recipes.each do |recipe| %>
+  <%= recipe.ingredients %>
+<% end %>

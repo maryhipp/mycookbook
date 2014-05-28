@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index] do
     resources :recipes
-    resources :grocery_lists, except: [:index]
+    get '/grocery_list' => 'grocery_lists#show'
   end
 
   resources :sessions, only: [:create]

@@ -22,7 +22,9 @@
   </ol>
 </div>
 
-
+<%= form_for [@user,@recipe] do |f| %>
+  <%= f.submit "Add to My Grocery List" %>
+<% end %>
 
 <%= link_to "Edit Recipe", edit_user_recipe_path(@user,@recipe) %>
 

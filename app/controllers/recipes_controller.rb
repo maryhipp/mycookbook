@@ -11,39 +11,24 @@ class RecipesController < ApplicationController
 
   def search_result
     get_json
+
   end
 
   def new
   end
 
   def create
-    #if creating a recipe via saving from search
-    if params[:recipe_id] != nil
-      get_json
-      @recipe[:title] = @recipe_title
-      @recipe[:imageURL] = @recipe_imageURL
-      @recipe[:description] = @recipe_description
-      @recipe[:cuisine] = @recipe_cuisine
-      @recipe[:ingredients] = @recipe_ingredient_array
-      @recipe[:instructions] = @recipe_instructions
-      @recipe[:yield] = @recipe_yield
-      @recipe[:time] = @recipe_time
-      @recipe[:user_id] = params[:user_id]
-      @recipe.save
-      redirect_to user_recipes_path(@user)
-    else #if creating a recipe via entering into form
-      @recipe[:title] = params[:recipe][:title]
-      @recipe[:imageURL] = params[:recipe][:imageURL]
-      @recipe[:description] = params[:recipe][:description]
-      @recipe[:cuisine] = params[:recipe][:cuisine]
-      @recipe[:ingredients] = params[:recipe][:ingredients].split(",")
-      @recipe[:instructions] = params[:recipe][:instructions].split(". ")
-      @recipe[:yield] = params[:recipe][:yield]
-      @recipe[:time] = params[:recipe][:time]
-      @recipe[:user_id] = params[:user_id]
-      @recipe.save
-      redirect_to user_recipes_path(@user)
-    end
+    @recipe[:title] = params["recipe"]["title"]
+    @recipe[:imageURL] = params["recipe"]["imageURL"]
+    @recipe[:description] = params["recipe"]["description"]
+    @recipe[:cuisine] = params["recipe"]["cuisine"]
+    @recipe[:ingredients] = params["recipe"]["ingredients"].split("$")
+    @recipe[:instructions] = params["recipe"]["instructions"].split("$")
+    @recipe[:yield] = params["recipe"]["yield"]
+    @recipe[:time] = params["recipe"]["time"]
+    @recipe[:user_id] = params[:user_id]
+    @recipe.save
+    redirect_to user_recipes_path(@user)
   end
 
   def index
@@ -61,8 +46,8 @@ class RecipesController < ApplicationController
     @recipe[:imageURL] = params[:recipe][:imageURL]
     @recipe[:description] = params[:recipe][:description]
     @recipe[:cuisine] = params[:recipe][:cuisine]
-    @recipe[:ingredients] = params[:recipe][:ingredients].split(",")
-    @recipe[:instructions] = params[:recipe][:instructions].split(". ")
+    @recipe[:ingredients] = params[:recipe][:ingredients].split(', ')
+    @recipe[:instructions] = params[:recipe][:instructions].split('. ')
     @recipe[:yield] = params[:recipe][:yield]
     @recipe[:time] = params[:recipe][:time]
     @recipe[:user_id] = params[:user_id]
@@ -87,7 +72,6 @@ class RecipesController < ApplicationController
     @recipe_yield = response["Recipe"]["YieldNumber"].to_s + " " + response["Recipe"]["YieldUnit"].to_s
     @recipe_time = response["Recipe"]["TotalMinutes"]
     @recipe_rating = response["Recipe"]["StarRating"].to_f.round(2)
-    #WHY WILL THIS WORK IN PRY AND NOT IN MY APP :(
     @recipe_ingredient_array = response["Recipe"]["Ingredients"]["Ingredient"].map do |ingredient_hash|
       "#{ingredient_hash["Quantity"] } #{ingredient_hash["Unit"]} #{ingredient_hash["Name"]}"
     end

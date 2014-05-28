@@ -22,7 +22,7 @@ describe 'User can save recipes from search if logged in' do
   end
 
     it "does show option to save recipe to CookBook if logged in" do
-      expect(page).should have_selector(:link_or_button, "create")
+      expect(page).to have_selector(:link_or_button, "create")
     end
 
     it "saves recipe to user's cookbook" do

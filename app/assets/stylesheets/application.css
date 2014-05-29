@@ -25,7 +25,7 @@ div.navigation {
   margin:10px;
   padding:10px;
   position:fixed;
-  width: 300px;
+  width: 19%;
   z-index: 1;
   background-color:rgba(0,0,0,0.5);
 }
@@ -63,7 +63,9 @@ div.navigation {
 
 
 div.welcomepage {
+  margin: 0 auto;
   text-align: center;
+  width: 50%;
 }
 
 .welcomepage a {

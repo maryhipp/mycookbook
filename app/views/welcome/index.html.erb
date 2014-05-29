@@ -1,6 +1,8 @@
 <h1 class="visuallyhidden">Basic Recipe Search</h1>
+<div class="welcomepage">
 
 <p class="welcome">Welcome to MyCookbook!</p>
+
 
 <%= form_tag("/search_results", method: "get") do %>
   <%= label_tag(:q, "What are you craving?", :class => "craving") %>
@@ -13,4 +15,4 @@
 <% if signed_in? %>
   <%= link_to "Nah, I want to add my own", new_user_recipe_path(current_user) %>
 <% end %>
-
+</div>

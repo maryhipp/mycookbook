@@ -2,17 +2,22 @@
 <% if signed_in? %>
 
   <%= form_for :session, url: signout_path, method: 'delete' do |f| %>
-    Welcome, <%= link_to current_user.name, current_user %>!
-    <%= f.submit "Sign out", id: 'signout' %>
+    <span class="welcomeuser">Welcome, <%= link_to current_user.name, current_user %>!</span>
+    <span class="signout"><%= f.submit "Sign out", id: 'signout' %></span>
   <% end %>
 
-  <%= link_to "My Cookbook", user_recipes_path(current_user) %>
-  <%= link_to "My Grocery List", user_grocery_list_path(current_user) %>
+  <span class="searchbanner"><%= link_to "Search", root_path %></span>
+<br>
+  <span class="mycookbooklink"><%= link_to "My Cookbook", user_recipes_path(current_user) %></span>
+  <br>
+  <span class="mygrocerylistlink"><%= link_to "My Grocery List", user_grocery_list_path(current_user) %></span>
 
 <% else %>
-  Sign up or log in to save recipes to your cookbook!
-
-  <%= link_to "Sign In", signin_path %> | <%= link_to "Sign up", signup_path %>
+  <span class="loggedoutbanner">Sign up or log in to save recipes to your cookbook!</span>
+<br>
+  <span class="signinsignup"><%= link_to "Sign In", signin_path %> | <%= link_to "Sign up", signup_path %></span>
+<br>
+  <span class="searchbanner"><%= link_to "Search", root_path %></span>
 
 <% end %>
 

@@ -4,8 +4,8 @@ class RecipesController < ApplicationController
   before_action(:find_recipe, only: [:show, :edit, :update, :destroy])
 
   def search_results
-    search_terms = params[:q].gsub(" ", "+")
-    response_hash = HTTParty.get("http://api.bigoven.com/recipes?any_kw=#{search_terms}&pg=1&rpp=20&api_key=#{MY_API_KEY}")
+    @search_terms = params[:q].gsub(" ", "+")
+    response_hash = HTTParty.get("http://api.bigoven.com/recipes?any_kw=#{@search_terms}&pg=1&rpp=20&api_key=#{MY_API_KEY}")
     @search_results = response_hash["RecipeSearchResult"]["Results"]["RecipeInfo"]
   end
 
@@ -73,7 +73,7 @@ class RecipesController < ApplicationController
     @recipe_time = response["Recipe"]["TotalMinutes"]
     @recipe_rating = response["Recipe"]["StarRating"].to_f.round(2)
     @recipe_ingredient_array = response["Recipe"]["Ingredients"]["Ingredient"].map do |ingredient_hash|
-      "#{ingredient_hash["Quantity"] } #{ingredient_hash["Unit"]} #{ingredient_hash["Name"]}"
+      "#{ingredient_hash["Quantity"].to_f.round(2) } #{ingredient_hash["Unit"]} #{ingredient_hash["Name"]}"
     end
     @recipe_instructions = response["Recipe"]["Instructions"].split(". ")
   end

@@ -1,11 +1,13 @@
 <div class="search_results">
-<h1>Search Results</h1>
+<h1>Recipe Results for "<%= @search_terms %>"</h1>
 
 <% @search_results.each do |recipe| %>
   <li>
     <% recipe_id = recipe["RecipeID"] %>
     <a href="/search_results/<%= recipe_id %>" id="recipe-link">
-    <img src="<%= recipe["ImageURL"] %>" class="list_image"><p style="list_title"><%= recipe["Title"] %></p>
+    <img src="<%= recipe["ImageURL"] %>">
+    <p><%= recipe["Title"] %></p>
+
     </a>
   </li>
 <% end %>

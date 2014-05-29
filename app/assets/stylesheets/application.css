@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 
 .visuallyhidden {
   border: 0;
@@ -26,85 +12,393 @@
 }
 
 body {
-  background-color:#9bc2cf;
-}
-div.container {
-  background-color:white;
-  border: 4px solid black;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  width: 900px;
+  background: url("http://www.culinaryphoto.com/data/photos/157_1background3.jpg");
+  background-size: tile;
+  font-family: 'Raleway',Arial;
 }
 
 div.navigation {
-  text-align: right;
+  color:white;
+  font-family:'Nixie One', cursive;
+  font-size: 20px;
+  float:left;
+  margin:10px;
+  padding:10px;
+  position:fixed;
+  width: 300px;
+  z-index: 1;
+  background-color:rgba(0,0,0,0.5);
 }
 
-.welcome {
-  text-shadow: -1px 0 gray, 0 1px gray, 1px 0 gray, 0 -1px gray;
-  color: lightblue;
-  font-family: Courier, monospace;
-  font-size: 50px;
+.navigation a {
+  color:white;
+  font-weight:bold;
+  text-decoration: underline;
+}
+
+.navigation input {
+  font-size:20px;
+}
+
+.loggedoutbanner {
+  font-family: 'Shadows Into Light Two', Courier;
+  font-size:20px;
+  text-transform: uppercase;
+  width:100%;
+}
+
+
+.miniwelcome {
+  font-family: 'Nixie One', Courier;
+  font-size: 45px;
   font-weight: bold;
+  margin: 0;
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+
+div.welcomepage {
+  text-align: center;
+}
+
+.welcomepage a {
+  color:white;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size:30px;
+  text-decoration: underline;
+}
+.welcome {
+  font-family: 'Nixie One', Courier;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .craving {
+  color:white;
   font-size:30px;
-  font-family: cursive;
+  font-family: 'Shadows Into Light Two', cursive;
   margin: 40px;
+
 }
 
 .search_button {
-  font-size: 50px;
-  margin:40px;
+  margin: 40px;
+  padding: 10px 20px 11px;
+  font-size: 21px;
+  background-color: #336699;
+  font-weight: bold;
+  text-shadow: 1px 1px #336699;
+  color: #ffffff;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: 1px solid #336699;
 
 }
 
 .search_field {
+  border: 3px black solid;
+  border-radius:10px;
+  color: gray;
   font-size: 30px;
-  width: 500px;
+  line-height: 70px;
   margin: 40px;
   text-align:center;
+  width: 700px;
+}
+
+
+div.search_results {
+  background-color:white;
+  border: 5px solid black;
+  overflow: hidden;
+  margin: 10px 0 10px auto;
+  width: 1300px;
 }
 
 .search_results h1 {
-  color:darkblue;
-  font-size:40px;
+  color:#336699;
+  font-family: 'Nixie One', Courier;
+  font-size:60px;
+  margin: 20px;
 }
 .search_results li {
   font-size: 40px;
   list-style: none;
-  padding:30px;
-  text-align: left;
   overflow: hidden;
+  position:relative;
 }
 
-.search_results .list_image {
-  border: 2px solid black;
+.search_results img {
+  border: 4px solid black;
   float:left;
-  margin:10px;
-  max-width: 25%;
-  max-height: 200px;
+  height: 300px;
+  margin:10px 50px 10px 20px;
+  overflow:hidden;
+  padding:10px;
+  width: 300px;
 }
 
-.list_title {
-  margin:10px;
-  max-width: 70%;
+.search_results a {
+  color: black;
+  text-decoration: none;
+}
 
+.search_results p {
+  margin:130px;
  }
 
-.large-image {
-  max-width:800px;
+
+div.search_result {
+  background-color:white;
+  border: 5px solid black;
+  overflow: hidden;
+  margin: 10px 0 10px auto;
+  width: 1300px;
+}
+
+.search_result .backbutton a {
+  padding: 10px;
+  text-decoration: none;
+}
+
+.search_result h1 {
+  color:#336699;
+  font-family: 'Nixie One', Courier;
+  font-size:60px;
+  margin: 0;
+  text-align: center;
+}
+
+.search_result img {
+  border: 5px solid black;
+  float:left;
+  margin: 10px ;
+  padding: 20px;
+  position:fixed;
+  width: 500px;
+}
+.search_result .everythingbutimg {
+  float:right;
+  width: 700px;
+  padding:10px;
+  margin-bottom:20px;
+}
+
+.search_result p.description {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 25px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.search_result .details {
+  font-family: 'Nixie One', Courier;
+  font-size: 20px;
+  font-weight:bold;
+  padding: 0 20px;
+
+}
+
+.search_result .ingredients {
+  display: block;
+  font-family: 'Nixie One', Courier;
+  padding: 0 20px;
+  margin: 0;
+}
+.search_result .ingredients p {
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.search_result .ingredients ul {
+  font-size: 20px;
+  list-style: none;
+}
+
+.search_result .instructions {
+  display: block;
+  font-family: 'Nixie One', Courier;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.search_result .instructions p {
+  font-size: 20px;
+  font-weight:bold;
+}
+
+.search_result .instructions ol {
+  font-size: 20px;
+}
+
+#create {
+  background-color: #336699;
+  border: 1px solid #336699;
+  border-radius: 100px;
+  color: #ffffff;
+  float:right;
+  font-size: 21px;
+  font-weight: bold;
+  margin: 40px 200px 40px;
+  -moz-border-radius: 100px;
+  padding: 10px 20px 11px;
+  text-shadow: 1px 1px #336699;
+  -webkit-border-radius: 100px;
+}
+
+.search_result .bottomnav {
+  margin: 40px 200px 40px;
+  text-align: center;
+}
+
+.search_result .bottomnav input {
+  font-size: 40px;
+  margin: 15px;
+}
+
+.signinpage {
+  background-color:white;
   border: 3px solid black;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align:center;
+  width: 400px;
+}
+
+.signinpage h1 {
+  color: #336699;
+  font-family: 'Nixie One', Courier;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top:60px;
+}
+
+.signinpage form label{
+  font-size: 20px;
+  margin: 20px 0 20px 20px;
 
 }
 
-.recipedetails {
-  text-align: left;
+.signinpage form input{
+  font-size: 20px;
+  margin: 20px 20px 20px 0;
+
 }
 
-.grocerylist {
+.signinpage form #signin{
+  font-size:70px;
+}
+
+.signuppage {
+  background-color:white;
+  border: 3px solid black;
+  margin: 20px auto;
+  overflow: hidden;
+  text-align:center;
+  width: 600px;
+}
+
+.signuppage h1 {
+  color: #336699;
+  font-family: 'Nixie One', Courier;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top:60px;
+
+}
+
+.signuppage form label{
+  font-size: 20px;
+  margin: 20px 0 20px 20px;
+
+}
+
+.signuppage form input{
+  font-size: 20px;
+  margin: 20px 20px 20px 0;
+
+}
+
+.signuppage form #submit{
+  font-size:70px;
+}
+
+div.usercookbook {
+  background-color:white;
+  border: 5px solid black;
+  overflow: hidden;
+  padding: 50px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.usercookbook h1 {
+  color: #336699;
+  font-family: 'Nixie One', Courier;
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 0;
+  text-align:center;
+}
+
+.usercookbook li {
   font-size: 30px;
-  text-align: left;
+  padding: 5px;
+}
+
+.usercookbook li a {
+  color:black;
+  text-decoration: none;
+}
+
+.usercookbook input {
+  font-size:30px;
+  text-align:center;
+}
+
+div.recipeform {
+  background-color:white;
+  border: 3px solid black;
+  width: 800px;
+  padding:20px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+.recipeform h1 {
+  color: #336699;
+  font-family: 'Nixie One', Courier;
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 0;
+  text-align:center;
+}
+
+.recipeform form label{
+  font-size: 25px;
+  margin: 20px 0 20px 20px;
+
+}
+.recipeform form input{
+  font-size: 25px;
+  margin: 20px 20px 20px 0;
+}
+
+.recipeform form textarea{
+  font-size: 25px;
+  height: 75px;
+  margin: 20px 20px 20px 0;
+  width: 500px;
 }

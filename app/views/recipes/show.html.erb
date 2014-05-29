@@ -1,35 +1,44 @@
-<h1><%= @recipe.title %></h1>
-
+<div class="search_result">
+<p class="backbutton"><%= link_to "Back to Cookbook", user_recipes_path(current_user) %></p>
 <img src="<%= @recipe.imageURL %>" class="large-image">
-<div class="recipedetails">
-  <p><%= @recipe.description %></p>
+<div class="everythingbutimg">
+<h1><%= @recipe.title %></h1>
+  <p class="description"><%= @recipe.description %></p>
+
+  <div class="details">
   <p>Cuisine: <%= @recipe.cuisine %></p>
   <p>Servings: <%= @recipe.yield %></p>
   <p>Total Time: <%= @recipe.time %> minutes</p>
-
+  </div>
+  <div class="ingredients">
   <p>Ingredients:</p>
   <ul>
     <% @recipe.ingredients.each do |ingredient| %>
       <li> <%= ingredient %></li>
     <% end %>
   </ul>
-
+  </div>
+  <div class="instructions">
   <p>Instructions:</p>
     <ol>
     <% @recipe.instructions.each do |instruction_line| %>
       <li><%= instruction_line %></li>
     <% end %>
     </ol>
+  </div>
+<div class="bottomnav">
+
+  <%= form_for [@user,@recipe], url: user_grocery_list_path(@user) do |f| %>
+    <%= f.hidden_field 'add to grocery list', :value =>'yes' %>
+    <%= f.hidden_field :recipe_id, :value => @recipe.id %>
+    <%= f.submit "Add to My Grocery List" %>
+  <% end %>
+
+  <%= link_to "Edit Recipe", edit_user_recipe_path(@user,@recipe) %>
+
+  <%= form_for [@user,@recipe], method: 'delete' do |f| %>
+    <%= f.submit "Delete Recipe from MyCookbook", id: "destroy" %>
+  <% end %>
 </div>
-
-<%= form_for [@user,@recipe], url: user_grocery_list_path(@user) do |f| %>
-  <%= f.hidden_field 'add to grocery list', :value =>'yes' %>
-  <%= f.hidden_field :recipe_id, :value => @recipe.id %>
-  <%= f.submit "Add to My Grocery List" %>
-<% end %>
-
-<%= link_to "Edit Recipe", edit_user_recipe_path(@user,@recipe) %>
-
-<%= form_for [@user,@recipe], method: 'delete' do |f| %>
-  <%= f.submit "Delete Recipe from MyCookbook", id: "destroy" %>
-<% end %>
+</div>
+</div>

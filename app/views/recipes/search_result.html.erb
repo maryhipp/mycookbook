@@ -1,45 +1,50 @@
-<p class="visuallyhidden">Recipe</p>
+<div class="search_result">
+  <p class="backbutton"><%= link_to "Back to Search Results", :back %></p>
+  <img src="<%= @recipe_imageURL %>">
+  <div class="everythingbutimg">
+    <h1><%= @recipe_title %></h1>
+    <p class="description"><%= @recipe_description %></p>
 
 
-<h1><%= @recipe_title %></h1>
-<img src="<%= @recipe_imageURL %>" class="large-image">
-<div class="recipedetails">
-  <p><%= @recipe_description %></p>
-  <p>Cuisine: <%= @recipe_cuisine %></p>
-  <p>Servings: <%= @recipe_yield %></p>
-  <p>Total Time: <%= @recipe_time %> minutes</p>
-  <p>Rating: <%= @recipe_rating %></p>
-
-  <p>Ingredients:</p>
-  <ul>
-    <% @recipe_ingredient_array.each do |ingredient| %>
-      <li> <%= ingredient %></li>
+    <div class="details">
+      <p>Cuisine: <%= @recipe_cuisine %></p>
+      <p>Servings: <%= @recipe_yield %></p>
+      <p>Total Time: <%= @recipe_time %> minutes</p>
+      <p>Rating: <%= @recipe_rating %>/5</p>
+    </div>
+    <div class="ingredients">
+      <p>Ingredients:</p>
+      <ul>
+        <% @recipe_ingredient_array.each do |ingredient| %>
+          <li> <%= ingredient %></li>
+          <% end %>
+      </ul>
+    </div>
+    <div class="instructions">
+      <p>Instructions:</p>
+      <ol>
+      <% @recipe_instructions.each do |instruction_line| %>
+        <li><%= instruction_line %></li>
       <% end %>
-  </ul>
+      </ol>
+    </div>
 
-  <p>Instructions:</p>
-  <ol>
-  <% @recipe_instructions.each do |instruction_line| %>
-    <li><%= instruction_line %></li>
-  <% end %>
-  </ol>
+    <% if signed_in? %>
+
+      <%= form_for [@user, @recipe] do |f|%>
+        <%= hidden_field_tag "recipe[recipe_id]", @recipe_id %>
+        <%= hidden_field_tag "recipe[title]", @recipe_title %>
+        <%= hidden_field_tag "recipe[imageURL]", @recipe_imageURL %>
+        <%= hidden_field_tag "recipe[description]", @recipe_description %>
+        <%= hidden_field_tag "recipe[cuisine]",  @recipe_cuisine %>
+        <%= hidden_field_tag "recipe[ingredients]", (@recipe_ingredient_array.join("$")) %>
+        <%= hidden_field_tag "recipe[instructions]", (@recipe_instructions.join("$")) %>
+        <%= hidden_field_tag "recipe[yield]", @recipe_yield %>
+        <%= hidden_field_tag "recipe[time]", @recipe_time %>
+        <%= submit_tag "Save Recipe to MyCookbook", id: "create" %>
+      <% end %>
+
+    <% end %>
+
 </div>
-
-<% if signed_in? %>
-
-  <%= form_for [@user, @recipe] do |f|%>
-    <%= hidden_field_tag "recipe[recipe_id]", @recipe_id %>
-    <%= hidden_field_tag "recipe[title]", @recipe_title %>
-    <%= hidden_field_tag "recipe[imageURL]", @recipe_imageURL %>
-    <%= hidden_field_tag "recipe[description]", @recipe_description %>
-    <%= hidden_field_tag "recipe[cuisine]",  @recipe_cuisine %>
-    <%= hidden_field_tag "recipe[ingredients]", (@recipe_ingredient_array.join("$")) %>
-    <%= hidden_field_tag "recipe[instructions]", (@recipe_instructions.join("$")) %>
-    <%= hidden_field_tag "recipe[yield]", @recipe_yield %>
-    <%= hidden_field_tag "recipe[time]", @recipe_time %>
-    <%= submit_tag "Save Recipe to MyCookbook", id: "create" %>
-  <% end %>
-
-<% end %>
-
-<%= link_to "Back to Search Results", :back %>
+</div>

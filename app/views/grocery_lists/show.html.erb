@@ -1,3 +1,4 @@
+<div class="usercookbook">
 <h1><%= @user.name %>'s Grocery List</h1>
 
 <div class="grocerylist">
@@ -12,3 +13,5 @@
 <%= form_tag user_grocery_list_path(@user), method: 'patch' do %>
   <%= submit_tag "Clear My Grocery List" %>
 <% end %>
+
+</div>

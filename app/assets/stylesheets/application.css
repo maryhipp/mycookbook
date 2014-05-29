@@ -268,6 +268,15 @@ div.search_result {
   margin: 15px;
 }
 
+
+.userpage {
+  background-color:white;
+  border: 3px solid black;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align:center;
+  width: 400px;
+}
 .signinpage {
   background-color:white;
   border: 3px solid black;
@@ -334,9 +343,42 @@ div.search_result {
 .signuppage form #submit{
   font-size:70px;
 }
+div.grocery_list {
+  background:url("http://image.naldzgraphics.net/2012/08/28-Pristine.jpg");
+  background-size:contain;
+  border: 5px solid black;
+  overflow: hidden;
+  padding: 50px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.grocery_list h1 {
+  color: #336699;
+  font-family: 'Nixie One', Courier;
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 0;
+  text-align:center;
+}
+
+.grocery_list li {
+  font-size: 30px;
+  padding: 5px;
+}
+
+.grocery_list li a {
+  color:black;
+  text-decoration: none;
+}
+
+.grocery_list input {
+  font-size:30px;
+  text-align:center;
+}
 
 div.usercookbook {
-  background-color:white;
+  background:white;
   border: 5px solid black;
   overflow: hidden;
   padding: 50px;

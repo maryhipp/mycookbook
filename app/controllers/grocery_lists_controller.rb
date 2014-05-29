@@ -6,13 +6,11 @@ class GroceryListsController < ApplicationController
       @recipe[:grocery_list?] = true
       @recipe.save
     elsif params["commit"] == "Clear My Grocery List"
-
       @recipes = Recipe.where(grocery_list?: true)
       @recipes.each do |recipe|
         recipe[:grocery_list?] = false
         recipe.save
       end
-
     end
     redirect_to user_grocery_list_path(current_user)
   end

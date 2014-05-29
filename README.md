@@ -12,8 +12,8 @@ MyCookbook was developed for a project for the April 2014 Web Development Immers
 * Ruby 2.1.1
 * Rails 4.1.1
 * PostgreSQL Database
-* Authentication & Authorization from scratch using (http://bcrypt-ruby.rubyforge.org/ "bcrypt-ruby")
-* (http://api.bigoven.com/ "BigOven API") & (https://github.com/jnunemaker/httparty "HTTParty")
+* Authentication & Authorization from scratch using [b-crypt-ruby](http://bcrypt-ruby.rubyforge.org/ "bcrypt-ruby")
+* [BigOven API](http://api.bigoven.com/ "BigOven API") & [HTTParty](https://github.com/jnunemaker/httparty "HTTParty")
 
 ##User Stories Completed
 * User can only search recipes without being logged in or having account
@@ -30,7 +30,7 @@ MyCookbook was developed for a project for the April 2014 Web Development Immers
 
 
 ##Production
-Explore MyCookbook for yourself on (http://warm-lowlands-3385.herokuapp.com)
+Explore MyCookbook for yourself on [Heroku](http://warm-lowlands-3385.herokuapp.com)
 
 ##Backlog
-A full list of user stories can be found by looking at (https://www.pivotaltracker.com/s/projects/1086748 "Pivotal Tracker")
+A full list of user stories can be found by looking at [Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1086748 "Pivotal Tracker")

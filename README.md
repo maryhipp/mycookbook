@@ -14,7 +14,8 @@ MyCookbook was developed for a project for the April 2014 Web Development Immers
 * PostgreSQL Database
 * Authentication & Authorization from scratch using [b-crypt-ruby](http://bcrypt-ruby.rubyforge.org/ "bcrypt-ruby")
 * [BigOven API](http://api.bigoven.com/ "BigOven API") & [HTTParty](https://github.com/jnunemaker/httparty "HTTParty")
-* Testing using using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
+* Testing using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers), [ffaker](https://github.com/EmmanuelOga/ffaker), and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
+* Front-end design from scratch using [Sass Rails](https://github.com/rails/sass-rails)
 
 ##User Stories Completed
 * As a user, I can sign up for an account with an email address and password
@@ -31,7 +32,7 @@ MyCookbook was developed for a project for the April 2014 Web Development Immers
 
 
 ##Production
-Explore MyCookbook for yourself on [Heroku](http://warm-lowlands-3385.herokuapp.com)
+Explore MyCookbook for yourself on [Heroku](http://myc00kb00k.herokuapp.com/)
 
 ##Backlog
 A full list of user stories can be found by looking at [this Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1086748 "Pivotal Tracker")

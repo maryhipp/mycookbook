@@ -35,3 +35,5 @@ Explore MyCookbook for yourself on [Heroku](http://warm-lowlands-3385.herokuapp.
 
 ##Backlog
 A full list of user stories can be found by looking at [this Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1086748 "Pivotal Tracker")
+
+Here is the [ERD](https://www.gliffy.com/go/html5/5783015?toke=&app=1b5094b0-6042-11e2-bcfd-0800200c9a66&dev=false) and [preliminary wireframes](https://www.gliffy.com/go/html5/5783080?app=1b5094b0-6042-11e2-bcfd-0800200c9a66).

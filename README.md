@@ -37,4 +37,6 @@ Explore MyCookbook for yourself on [Heroku](http://myc00kb00k.herokuapp.com/)
 ##Backlog
 A full list of user stories can be found by looking at [this Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1086748 "Pivotal Tracker")
 
-Here is the [ERD](https://www.gliffy.com/go/html5/5783015?toke=&app=1b5094b0-6042-11e2-bcfd-0800200c9a66&dev=false) and [preliminary wireframes](https://www.gliffy.com/go/html5/5783080?app=1b5094b0-6042-11e2-bcfd-0800200c9a66).
+Below is the ERD for MyCookbook, including plans to add a customizable styling element for each user.
+
+![ERD](ERD.png)

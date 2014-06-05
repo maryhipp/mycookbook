@@ -25,7 +25,7 @@ div.navigation {
   margin:10px;
   padding:10px;
   position:fixed;
-  width: 300px;
+  width: 20%;
   z-index: 1;
   background-color:rgba(0,0,0,0.5);
 }
@@ -42,7 +42,7 @@ div.navigation {
 
 .loggedoutbanner {
   font-family: 'Shadows Into Light Two', Courier;
-  font-size:20px;
+  font-size:18px;
   text-transform: uppercase;
   width:100%;
 }
@@ -50,7 +50,7 @@ div.navigation {
 
 .miniwelcome {
   font-family: 'Nixie One', Courier;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: bold;
   margin: 0;
   color: white;
@@ -69,12 +69,12 @@ div.welcomepage {
 .welcomepage a {
   color:white;
   font-family: 'Shadows Into Light Two', cursive;
-  font-size:30px;
+  font-size:20px;
   text-decoration: underline;
 }
 .welcome {
   font-family: 'Nixie One', Courier;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   color: white;
   text-shadow:
@@ -115,7 +115,7 @@ div.welcomepage {
   line-height: 70px;
   margin: 40px;
   text-align:center;
-  width: 700px;
+  width: 550px;
 }
 
 
@@ -124,7 +124,7 @@ div.search_results {
   border: 5px solid black;
   overflow: hidden;
   margin: 10px 0 10px auto;
-  width: 1300px;
+  width: 75%;
 }
 
 .search_results h1 {
@@ -165,7 +165,7 @@ div.search_result {
   border: 5px solid black;
   overflow: hidden;
   margin: 10px 0 10px auto;
-  width: 1300px;
+  width: 75%;
 }
 
 .search_result .backbutton a {
@@ -187,11 +187,11 @@ div.search_result {
   margin: 10px ;
   padding: 20px;
   position:fixed;
-  width: 500px;
+  width: 300px;
 }
 .search_result .everythingbutimg {
   float:right;
-  width: 700px;
+  width: 550px;
   padding:10px;
   margin-bottom:20px;
 }
@@ -349,8 +349,8 @@ div.grocery_list {
   border: 5px solid black;
   overflow: hidden;
   padding: 50px;
-  margin: 0 auto;
-  width: 800px;
+  margin: 10px 0 10px auto;
+  width: 65%;
 }
 
 .grocery_list h1 {
@@ -380,10 +380,10 @@ div.grocery_list {
 div.usercookbook {
   background:white;
   border: 5px solid black;
-  overflow: hidden;
   padding: 50px;
-  margin: 0 auto;
-  width: 800px;
+  overflow: hidden;
+  margin: 10px 0 10px auto;
+  width: 65%;
 }
 
 .usercookbook h1 {
@@ -413,9 +413,10 @@ div.usercookbook {
 div.recipeform {
   background-color:white;
   border: 3px solid black;
-  width: 800px;
   padding:20px;
-  margin: 0 auto;
+  overflow: hidden;
+  margin: 10px 0 10px auto;
+  width: 70%;
   text-align:center;
 }
 

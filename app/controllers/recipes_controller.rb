@@ -78,6 +78,10 @@ class RecipesController < ApplicationController
     @recipe_instructions = response["Recipe"]["Instructions"].split(". ")
   end
 
+  def recipe_params
+    params.require(:recipe).permit(:title, :imageURL, :description, :cuisine, )
+  end
+
   def find_user
     @user = current_user
   end

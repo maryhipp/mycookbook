@@ -155,6 +155,10 @@ div.search_results {
   text-decoration: none;
 }
 
+.search_results a:hover {
+  text-decoration: underline;
+}
+
 .search_results p {
   margin:130px;
  }
@@ -173,6 +177,10 @@ div.search_result {
   text-decoration: none;
 }
 
+.search_result .backbutton a:hover {
+  text-decoration: none;
+}
+
 .search_result h1 {
   color:#336699;
   font-family: 'Nixie One', Courier;
@@ -183,12 +191,37 @@ div.search_result {
 
 .search_result img {
   border: 5px solid black;
+  margin-left: 15px;
+  width: 100%;
+}
+
+.search_result #image {
   float:left;
-  margin: 10px ;
+  margin: 0 auto;
   padding: 20px;
   position:fixed;
   width: 300px;
 }
+
+#create {
+  background-color: #336699;
+  border: 1px solid #336699;
+  border-radius: 100px;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: bold;
+  -moz-border-radius: 100px;
+  padding: 10px 20px 11px;
+  text-shadow: 1px 1px #336699;
+  -webkit-border-radius: 100px;
+}
+
+.search_result .nav {
+  margin: 20px;
+  text-align: center;
+}
+
+
 .search_result .everythingbutimg {
   float:right;
   width: 550px;
@@ -242,32 +275,6 @@ div.search_result {
 .search_result .instructions ol {
   font-size: 20px;
 }
-
-#create {
-  background-color: #336699;
-  border: 1px solid #336699;
-  border-radius: 100px;
-  color: #ffffff;
-  float:right;
-  font-size: 21px;
-  font-weight: bold;
-  margin: 40px 200px 40px;
-  -moz-border-radius: 100px;
-  padding: 10px 20px 11px;
-  text-shadow: 1px 1px #336699;
-  -webkit-border-radius: 100px;
-}
-
-.search_result .bottomnav {
-  margin: 40px 200px 40px;
-  text-align: center;
-}
-
-.search_result .bottomnav input {
-  font-size: 40px;
-  margin: 15px;
-}
-
 
 .userpage {
   background-color:white;
@@ -372,6 +379,10 @@ div.grocery_list {
   text-decoration: none;
 }
 
+.grocery_list li a:hover {
+  text-decoration: underline;
+}
+
 .grocery_list input {
   font-size:30px;
   text-align:center;
@@ -403,6 +414,10 @@ div.usercookbook {
 .usercookbook li a {
   color:black;
   text-decoration: none;
+}
+
+.usercookbook li a:hover {
+  text-decoration: underline;
 }
 
 .usercookbook input {

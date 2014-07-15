@@ -4,7 +4,7 @@
 
 ##Overview
 
-MyCookbook is a web application that allows users to compile their very own "Cookbook" using recipes gathered through either (a) form-based submission (for family or personal recipes), or (b) a search of hundreds of thousands of recipes using BigOven's API. Users also can use the Grocery List feature to compile a shopping list using the ingredients from selected recipes in their Cookbook.
+MyCookbook is a web application that allows users to compile their very own "Cookbook" using recipes gathered through either (a) form-based submission (for family or personal recipes), or (b) a search of hundreds of thousands of recipes using BigOven's API. Users also can use the Grocery List feature to compile a shopping list using the ingredients from selected recipes in their Cookbook. Please sign up for full functionality, as back-end authentication was a focus on this project.
 
 MyCookbook was developed for a project for the April 2014 Web Development Immersive course at General Assembly. It was developed over a week-long sprint to model the agile software development process.
 

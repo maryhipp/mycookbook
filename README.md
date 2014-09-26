@@ -15,7 +15,7 @@ MyCookbook was developed for a project for the April 2014 Web Development Immers
 * Authentication & Authorization from scratch using [b-crypt-ruby](http://bcrypt-ruby.rubyforge.org/ "bcrypt-ruby")
 * [BigOven API](http://api.bigoven.com/ "BigOven API") & [HTTParty](https://github.com/jnunemaker/httparty "HTTParty")
 * Testing using [rspec-rails](https://github.com/rspec/rspec-rails), [capybara](https://github.com/jnicklas/capybara), [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers), [ffaker](https://github.com/EmmanuelOga/ffaker), and [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
-* Front-end design from scratch using [Sass Rails](https://github.com/rails/sass-rails)
+* Front-end design & development from scratch
 
 ##User Stories Completed
 * As a user, I can sign up for an account with an email address and password
